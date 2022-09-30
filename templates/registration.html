@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% load static %}
+{%block content%}
+
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1><a style="color:white" href="/login">Login</a>/<a style="color:white" href="/user/registration">Register</a></h1>
+					<nav class="d-flex align-items-center">
+						<a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
+						<a href="category.html">registration</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+	<!--================Login Box Area =================-->
+	<section class="login_box_area section_gap ">
+		<div class="container">
+			<div class="row ">
+				<div class="col-lg-6 ">
+					<div class="login_form_inner">
+						<h3>Register to enter</h3>
+						<form class="row login_form" action="/user/addUser" enctype="multipart/form-data" method="POST">
+							{% csrf_token %}
+							<div class="col-md-12 form-group">
+								<input type="text" class="form-control" id="firstName" name="firstName" placeholder="FirstName" onfocus="this.placeholder = ''" onblur="this.placeholder = 'FirstName'">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="text" class="form-control" id="lastName" name="lastName" placeholder="lastName" onfocus="this.placeholder = ''" onblur="this.placeholder = 'lastName'">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="email" class="form-control" id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
+							</div>
+
+							<div class="col-md-12 form-group">
+								<input type="password" class="form-control" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="text" class="form-control" id="mobileNumber" name="mobileNumber" placeholder="MobileNumber" onfocus="this.placeholder = ''" onblur="this.placeholder = 'MobileNumber'">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="text" class="form-control" id="altNumber" name="altNumber" placeholder="AlternateNumber" onfocus="this.placeholder = ''" onblur="this.placeholder = 'AlternateNumber'">
+							</div>
+
+
+							<div class="col-md-12 form-group">
+								<button type="submit" value="submit" class="primary-btn">Register</button>
+								<a href="/user/registration">have you registered before?</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Login Box Area =================-->
+{%endblock%}
